@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :entries
   resources :users
-  root to: 'static_pages#home'
+  resources :entries
+  resources :comments, only: [:destroy, :create]
+  root to: 'users#index'
   resources :sessions, only: [:new, :create, :destroy]
 
   get "home" => 'static_pages#home'

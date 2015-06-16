@@ -1,0 +1,10 @@
+<% if logged_in? %>
+	<%= form_for(@comment) do |f| %>
+		<div class="form-group">
+		  <%= f.hidden_field :user_id %>
+		  <%= f.hidden_field :entry_id %>
+		  <%= f.text_area :content, placeholder: 'Put your comment here' %>
+		  <%= f.submit 'Send comment' %>
+		</div>
+	<% end %>
+<% end %>

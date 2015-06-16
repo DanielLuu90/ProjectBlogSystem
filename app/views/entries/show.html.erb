@@ -9,12 +9,16 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user.entries.any? %>
-        <h3>Entries (<%= @user.entries.count %>)</h3>
-        <ol class="entries">
-          <%= render @entries %>
-        </ol>
-        <%= will_paginate @entries %>
-    <% end %>
+    <article>
+      <h3><%= @entry.name %></h3>
+      <p>
+        <%= @entry.content_entry %>
+      </p>
+    </article>
+    <div>
+      <h4>Comments (<%= @comments.count %>)</h4>
+      <%= render 'comments/comment' %>
+     </div>
+    <%=render 'comments/new' %>
   </div>
 </div>

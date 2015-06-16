@@ -2,6 +2,23 @@
 <% flash.each do|key,value| %>
 <div class= "alert alert-<%= key %>"><%= value %></div>
 <% end %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="entry_form">
+        <%= render 'shared/entry_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Entry Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+  </div>
+<% else %>
 <div class="center jumbotron">
 	<h1>Welcome to the Sample App</h1>
 	<h2>
@@ -11,3 +28,4 @@
 	</h2>
 	<%= link_to "Sign up now!", 'signup', class: "btn btn-large btn-primary" %>
 </div>
+<% end %>
