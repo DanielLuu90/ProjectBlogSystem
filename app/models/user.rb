@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
   	def is_password_set?
   		self.new_record? || !self.password.blank?
 	end
+	def feed
+		Entry.where("user_id = ?", id)
+	end
 
 	private
 	def User.digest string

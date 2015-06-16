@@ -1,0 +1,14 @@
+<% if @comments.any? %>
+	<% @comments.each do |comment|%>
+		<div class="row">
+			<div class="col-md-2">
+				<%= gravatar_for(comment.user, size: 30) %>
+			</div>
+			<div class="col-md-10">
+				<p><%= comment.user.name %> says at <%= comment.created_at %></p>
+				<p><%= comment.content %>
+			</div>
+		</div>
+		<br>
+	<% end %>
+<% end %>
