@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+	has_many :entries
+	has_many :comments
+	
 	has_secure_password
 	attr_accessor :remember_token
 	validates :password, length: {minimum: 6, maximum: 50},
