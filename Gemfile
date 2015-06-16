@@ -15,7 +15,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
+gem 'faker'
 gem 'bootstrap-sass'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate'
 gem 'bcrypt', '~> 3.1.7'
 
 

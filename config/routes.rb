@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :entries
   resources :users
   root to: 'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
