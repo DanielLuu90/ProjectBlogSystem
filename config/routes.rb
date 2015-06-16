@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :entries
-  resources :comments, only: [:destroy, :create]
+  resources :comments,      only: [:destroy, :create]
+  resources :sessions,      only: [:new, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   root to: 'users#index'
-  resources :sessions, only: [:new, :create, :destroy]
-
   get "home" => 'static_pages#home'
   get "about" => 'static_pages#about'
   get "contact" => 'static_pages#contact'
